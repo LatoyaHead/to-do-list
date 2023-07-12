@@ -1,14 +1,15 @@
 :root {
-  --main-purple: blueviolet;
+  --main-purple: #6C63FF;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 200px;
   background-image: linear-gradient(109.6deg, rgb(80, 35, 217) 11.2%, rgb(217, 35, 189) 91.1%);
   background-size: 300% 300%;
   animation: color 12s ease-in-out infinite;
+  overflow: hidden;
+  
 }
 
 @keyframes color {
@@ -28,13 +29,33 @@ h1 {
   color: var(--main-purple);
 }
 
-.todo-container {
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.todoimg {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-radius: 5px;
+}
+
+.todo-card {
   max-width: 400px;
   margin: 0 auto;
+  height: 50%;
   background: plum;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.todo-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .input-container {
@@ -66,6 +87,8 @@ h1 {
 .todo-list {
   list-style-type: none;
   padding: 0;
+  overflow-y: auto;
+  height: 320px;
 }
 
 .todo-item {
@@ -89,4 +112,8 @@ h1 {
 .todo-item.completed {
   text-decoration: line-through 2px var(--main-purple);
   opacity: 0.;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
