@@ -1,15 +1,17 @@
 :root {
-  --main-purple: #6C63FF;
+  --main-purple: rgb(157,46,91);
 }
 
+ * {
+  font-family: "poppins";
+ }
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background-image: linear-gradient(109.6deg, rgb(80, 35, 217) 11.2%, rgb(217, 35, 189) 91.1%);
+  background-image: linear-gradient(109.6deg, rgb(199, 76, 125) 15%, rgb(99,31,60) 91.1%);
   background-size: 300% 300%;
   animation: color 12s ease-in-out infinite;
   overflow: hidden;
-  
 }
 
 @keyframes color {
@@ -26,30 +28,57 @@ body {
 
 h1 {
   text-align: center;
-  color: var(--main-purple);
+  color: rgb(99,31,60);
+  font-size: 50px;
 }
 
 .container {
   display: flex;
-  width: 100%;
-  height: 100vh;
+  /* width: 100%; 
+  height: 100vh; */
 }
 
 .todoimg {
-  width: 100%;
+  width: 80%;
+  padding-left: 10px;
   height: 100%;
-  opacity: 1;
-  border-radius: 5px;
+}
+
+.bubble {
+  position: relative;
+  font-size: 28px;
+  line-height: 24px;
+  width: 250px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+  right: 150px;
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #fff;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
 }
 
 .todo-card {
   max-width: 400px;
   margin: 0 auto;
   height: 50%;
-  background: plum;
+  background: rgb(39,34,31);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.55);
+  overflow: auto;
 }
 
 .todo-container {
@@ -96,7 +125,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   padding: 8px;
-  background-color: #fff;
+  background-color: white;
   border-radius: 8px;
   margin-bottom: 5px;
 }
